@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - Netabooks</title>
+    <link rel="stylesheet" href="bansach.css">
+    <link rel="stylesheet" href="thanhtoan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+  <div class="logo"><i class="fa-solid fa-book-open"></i> NETA<span>BOOKS</span></div>
+  <nav>
+    <a href="bansach.html">Trang chủ</a>
+    <a href="sachbanchay.html">Sách bán chạy</a>
+    <a href="tintuc.html">Tin tức</a>
+    <a href="lienhe.html">Liên hệ</a>
+  </nav>
+  <a href="giohang.html" class="cart" style="text-decoration: none; color: white;">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
+</header>
+
+<div class="checkout-container">
+  <div class="checkout-header-title">
+    <h2>Thôn Tin <span style="color: var(--accent-color);">Giao Hàng & Thanh Toán</span></h2>
+    <p>Vui lòng điền đầy đủ thông tin bên dưới để Netabooks có thể gửi sách đến bạn nhanh nhất!</p>
+  </div>
+
+  <div class="checkout-wrapper">
+    <div class="checkout-form-box">
+      <h3>Địa Chỉ Nhận Hàng</h3>
+      <form onsubmit="processCheckout(event)">
+        <div class="form-group">
+          <label for="fullname">Họ và tên người nhận</label>
+          <input type="text" id="fullname" placeholder="Ví dụ: Nguyễn Văn A" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Số điện thoại</label>
+          <input type="tel" id="phone" placeholder="Ví dụ: 0386668224" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Địa chỉ nhận hàng (Số nhà, đường, phường/xã...)</label>
+          <textarea id="address" rows="3" placeholder="Ví dụ: Số 123, đường Trần Hưng Đạo, TP. Long Xuyên" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="note">Ghi chú đơn hàng (Tùy chọn)</label>
+          <input type="text" id="note" placeholder="Ví dụ: Giao giờ hành chính...">
+        </div>
+
+        <h3>Phương Thức Thanh Toán</h3>
+        <div class="payment-methods">
+          <label class="payment-option">
+            <input type="radio" name="payment" value="cod" checked>
+            <span>Thanh toán khi nhận hàng (COD)</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="banking">
+            <span>Chuyển khoản ngân hàng qua QR Code</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer; margin-top: 20px;">Xác Nhận Đặt Hàng</button>
+      </form>
+    </div>
+
+    <div class="checkout-summary">
+      <h3>Đơn Hàng Của Bạn</h3>
+      <div id="checkout-items-list">
+      </div>
+      <div class="checkout-total">
+        <span>Tổng thanh toán:</span>
+        <strong style="color: var(--danger-color, #e53935);">Miễn phí vận chuyển (COD)</strong>
+      </div>
+      <a href="giohang.html" class="back-cart-link">← Quay lại giỏ hàng</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <h2>NETA<span>BOOKS</span></h2>
+      <p>Chuyên cung cấp các loại sách văn học, kỹ năng, kinh tế và thiếu nhi chính hãng.</p>
+    </div>
+    <div>
+      <h3>Liên hệ</h3>
+      <p>📍 TP. Long Xuyên</p>
+      <p>📞 0386 668 224</p>
+      <p>✉️ support@netabooks.vn</p>
+    </div>
+    <div>
+      <h3>Kết nối với chúng tôi</h3>
+      <p>Facebook | Instagram | YouTube</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 NETABOOKS. All Rights Reserved.</p>
+</footer>
+
+<script src="bansach.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    loadCheckoutSummary();
+  });
+
+  function loadCheckoutSummary() {
+    let summaryBox = document.getElementById('checkout-items-list');
+    if (!summaryBox) return;
+
+    if (cart.length === 0) {
+      summaryBox.innerHTML = "<p style='color: #777;'>Giỏ hàng của bạn đang trống.</p>";
+      return;
+    }
+
+    let html = "<ul style='list-style: none; padding: 0; margin-bottom: 20px;'>";
+    cart.forEach(item => {
+      html += `<li style="padding: 8px 0; border-bottom: 1px solid #eee; font-size: 14px; color: #17243b;">📚 ${item}</li>`;
+    });
+    html += "</ul>";
+    summaryBox.innerHTML = html;
+  }
+
+  function processCheckout(event) {
+    event.preventDefault();
+    if (cart.length === 0) {
+      alert("Giỏ hàng của bạn đang trống!");
+      return;
+    }
+    alert("🎉 Đặt hàng thành công! Netabooks sẽ liên hệ xác nhận đơn hàng và giao sách sớm nhất cho bạn.");
+    localStorage.removeItem('netabooks_cart');
+    cart = [];
+    updateCartCount();
+    window.location.href = "bansach.html";
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách Bán Chạy Nhất - Netabooks</title>
+  <link rel="stylesheet" href="bansach.css">
+  <link rel="stylesheet" href="sachbanchay.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+  <div class="logo"><i class="fa-solid fa-book-open"></i> NETA<span>BOOKS</span></div>
+ <nav>
+  <a href="bansach.html">Trang chủ</a>
+  <a href="sachbanchay.html">Sách bán chạy</a>
+  <a href="tintuc.html">Tin tức</a>
+  <a href="lienhe.html">Liên hệ</a>
+</nav>
+  <a href="giohang.html" class="cart" style="text-decoration: none; color: white;">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
+</header>
+
+<div class="banchay-container">
+  <div class="banchay-header-title">
+    <p>DANH MỤC ĐẶC BIỆT</p>
+    <h2>Tất Cả <span style="color: var(--accent-color);">Sách Bán Chạy Nhất</span></h2>
+    <p>Tổng hợp những tựa sách được độc giả yêu thích và săn đón nhiều nhất tại Netabooks.</p>
+  </div>
+
+  <div class="product-list">
+    <div class="product">
+      <img src="Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Cây Khế (Tái Bản 2025).webp" alt="Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Cây Khế (Tái Bản 2025)">
+      <h3>Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Cây Khế (Tái Bản 2025)</h3>
+      <p>Nghệ thuật thu phục lòng người và giao tiếp hiệu quả</p>
+      <strong>95.000đ</strong>
+      <button onclick="addCart('Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Cây Khế (Tái Bản 2025)')">Thêm vào giỏ</button>
+    </div>
+
+    <div class="product">
+      <img src="Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Sọ Dừa (Tái Bản 2023).webp" alt="Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Sọ Dừa (Tái Bản 2023)">
+      <h3>Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Sọ Dừa (Tái Bản 2023)</h3>
+      <p>Hành trình theo đuổi vận mệnh và cuộc sống</p>
+      <strong>95.000đ</strong>
+      <button onclick="addCart('Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Sọ Dừa (Tái Bản 2023)')">Thêm vào giỏ</button>
+    </div>
+
+    <div class="product">
+      <img src="Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Tấm Cám (Tái Bản 2023).jpg" alt="Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Tấm Cám (Tái Bản 2023)">
+      <h3>Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Tấm Cám (Tái Bản 2023)</h3>
+      <p>Bí quyết chinh phục mọi cuộc trò chuyện</p>
+      <strong>95.000đ</strong>
+      <button onclick="addCart('Truyện Cổ Tích Việt Nam Dành Cho Thiếu Nhi - Tấm Cám (Tái Bản 2023)')">Thêm vào giỏ</button>
+    </div>
+
+    <div class="product">
+      <img src="Truyện Đọc Thiếu Nhi - Doraemon - Nobita Và Lâu Đài Dưới Đáy Biển - Phiên Bản Mới.webp" alt="Truyện Đọc Thiếu Nhi - Doraemon - Nobita Và Lâu Đài Dưới Đáy Biển - Phiên Bản Mới">
+      <h3>Truyện Đọc Thiếu Nhi - Doraemon - Nobita Và Lâu Đài Dưới Đáy Biển - Phiên Bản Mới</h3>
+      <p>Hành trang định hướng tâm lý và cảm xúc giới trẻ</p>
+      <strong>55.000đ</strong>
+      <button onclick="addCart('Truyện Đọc Thiếu Nhi - Doraemon - Nobita Và Lâu Đài Dưới Đáy Biển - Phiên Bản Mới')">Thêm vào giỏ</button>
+    </div>
+
+    <div class="product">
+      <img src="Truyện Thiếu Nhi Hạt Giống Tâm Hồn - Lễ Tạ Ơn.webp" alt="Truyện Thiếu Nhi Hạt Giống Tâm Hồn - Lễ Tạ Ơn">
+      <h3>Truyện Thiếu Nhi Hạt Giống Tâm Hồn - Lễ Tạ Ơn</h3>
+      <p>Cuốn sách kinh điển thay đổi cuộc đời của hàng triệu người</p>
+      <strong>25.000đ</strong>
+      <button onclick="addCart('Truyện Thiếu Nhi Hạt Giống Tâm Hồn - Lễ Tạ Ơn')">Thêm vào giỏ</button>
+    </div>
+
+    <div class="product">
+      <img src="Truyện Thiếu Nhi Hạt Giống Tâm Hồn - Những Bông Hoa Hình Trái Tim.webp" alt="Truyện Thiếu Nhi Hạt Giống Tâm Hồn - Những Bông Hoa Hình Trái Tim">
+      <h3>Truyện Thiếu Nhi Hạt Giống Tâm Hồn - Những Bông Hoa Hình Trái Tim</h3>
+      <p>Khám phá kho báu lớn nhất cuộc đời nằm ngay trong chính bạn</p>
+      <strong>25.000đ</strong>
+      <button onclick="addCart('Truyện Thiếu Nhi Hạt Giống Tâm Hồn - Những Bông Hoa Hình Trái Tim')">Thêm vào giỏ</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <h2>NETA<span>BOOKS</span></h2>
+      <p>Chuyên cung cấp các loại sách văn học, kỹ năng, kinh tế và thiếu nhi chính hãng.</p>
+    </div>
+    <div>
+      <h3>Liên hệ</h3>
+      <p>📍 TP. Long Xuyên</p>
+      <p>📞 0386 668 224</p>
+      <p>✉️ support@netabooks.vn</p>
+    </div>
+    <div>
+      <h3>Kết nối với chúng tôi</h3>
+      <p>Facebook | Instagram | YouTube</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 NETABOOKS. All Rights Reserved.</p>
+</footer>
+
+<script src="bansach.js"></script>
+</body>
+</html>
